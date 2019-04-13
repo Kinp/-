@@ -34,7 +34,7 @@ void quickSort(int a[], int low, int high){
 int howTo(const void * _a,const void * _b){
     int* a = (int*)_a;
     int* b = (int*)_b;
-    return *a - *b;
+    return *a - *b;//如果比较两个doudle，则用return *a > *b ? 1 : -1; 因为两个实数相减不一定是int类型
 }
 
 int main(){
