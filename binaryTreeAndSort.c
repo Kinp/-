@@ -54,16 +54,18 @@ void printTree(struct treeNode *root){
 }
 
 int main() {
-    printf("Hello, World!\n");
-    int n = 5;//初始化个数
+    int n = 0;//初始化个数
     struct treeNode *root = NULL, *node = NULL;//main函数中有两个指针
     struct treeNode* initNode();//申明初始化节点函数
     void insertNode(struct treeNode *root, struct treeNode *node);//申明插入节点函数
+    printf("How many numbers do you want to sort?: ");
+    scanf("%d", &n);
+    printf("Please input your numbers: ");
     root = (struct treeNode*)malloc(sizeof(struct treeNode));//初始化根节点
     scanf("%d", &root->num);
     root->left = NULL;
     root->right = NULL;
-    for (int i = 1; i < 5; ++i) {//创建和插入其他节点
+    for (int i = 1; i < n; ++i) {//创建和插入其他节点
         node = initNode();
         insertNode(root, node);
     }
