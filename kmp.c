@@ -45,7 +45,7 @@ void kmp(char text[], char subString[], int prefix[], int n){
             i++;
             j++;
         } else{
-            j = subString[j];// j回溯
+            j = prefix[j];// j回溯
             if (j == 0){// 若j回溯到0，从下一位开始比较
                 i++;
                 j++;
