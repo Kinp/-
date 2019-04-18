@@ -4,7 +4,7 @@
 
 //#define COUNT 100
 void prefixTable(char subString[], char prefix[], int n){// 创建前缀表
-	prefix[0] = 0;
+    prefix[0] = 0;
     int i = 0, j = 1;// i 为subString元素下表, j 为prefix元素下标
     while (i < n){
         if (subString[i] == subString[j]){
@@ -47,7 +47,7 @@ void kmp(char text[], char subString[], int prefix[], int n){
             j++;
         } else{
             j = prefix[j];// j回溯
-            if (j == 0){// 若j回溯到0，从下一位开始比较
+            if (j == -1){// 若j回溯到0，从下一位开始比较
                 i++;
                 j++;
             }
