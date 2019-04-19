@@ -3,10 +3,10 @@
 #include <string.h>
 
 //#define COUNT 100
-void prefixTable(char subString[], char prefix[], int n){// 创建前缀表
-	prefix[0] = 0;
+void prefixTable(char subString[], int prefix[], int n){// 创建前缀表
+    prefix[0] = 0;
     int i = 0, j = 1;// i 为subString元素下表, j 为prefix元素下标
-    while (i < n){
+    while (j < n){
         if (subString[i] == subString[j]){
             i++;
             prefix[j] = i;// prefix[j]填的是i的下一位
@@ -20,7 +20,7 @@ void prefixTable(char subString[], char prefix[], int n){// 创建前缀表
             }
         }
     }
-    for (int l = 0; l < 5; ++l) {
+    for (int l = 0; l < n; ++l) {
         printf("%d ", prefix[l]);
     }
     printf("\n");
@@ -28,7 +28,7 @@ void prefixTable(char subString[], char prefix[], int n){// 创建前缀表
         prefix[k] = prefix[k - 1];
     }
     prefix[0] = -1;
-    for (int l = 0; l < 5; ++l) {
+    for (int l = 0; l < n; ++l) {
         printf("%d ", prefix[l]);
     }
     printf("\n");
@@ -47,7 +47,7 @@ void kmp(char text[], char subString[], int prefix[], int n){
             j++;
         } else{
             j = prefix[j];// j回溯
-            if (j == 0){// 若j回溯到0，从下一位开始比较
+            if (j == -1){// 若j回溯到0，从下一位开始比较
                 i++;
                 j++;
             }
@@ -56,8 +56,8 @@ void kmp(char text[], char subString[], int prefix[], int n){
 }
 
 int main(){
-    char text[] = "ababaaabbabababbababab";
-    char subString[] = "abbabab";
+    char text[] = "babaabaabaaabba";
+    char subString[] = "abaaba";
     int n = strlen(subString);
     char prefix[n];
     prefixTable(subString, prefix, n);
