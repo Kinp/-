@@ -39,7 +39,7 @@ void kmp(char text[], char subString[], int prefix[], int n){
     int i = 0, j = 0;// i 为text下标，j 为subString下标
     while (i < m){
         if (j == n - 1 && text[i] == subString[j]){// 完全匹配时，输出位置，然后继续
-            printf("Position: %d", i - j);
+            printf("Position: %d\n", i - j);
             j = prefix[j];
         }
         if (text[i] == subString[j]){// 若匹配，i、j都往后
