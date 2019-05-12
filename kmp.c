@@ -20,7 +20,7 @@ void prefixTable(char subString[], int prefix[], int n){// 创建前缀表
             }
         }
     }
-    for (int l = 0; l < n; ++l) {
+    for (int l = 0; l < n; ++l) {// 输出一下子
         printf("%d ", prefix[l]);
     }
     printf("\n");
@@ -28,7 +28,7 @@ void prefixTable(char subString[], int prefix[], int n){// 创建前缀表
         prefix[k] = prefix[k - 1];
     }
     prefix[0] = -1;
-    for (int l = 0; l < n; ++l) {
+    for (int l = 0; l < n; ++l) {// 输出一下子
         printf("%d ", prefix[l]);
     }
     printf("\n");
