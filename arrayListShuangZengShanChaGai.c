@@ -24,8 +24,9 @@ int main() {
     void printArrayList(struct arrayList *head);
     head = creatArrayList(n);
     printArrayList(head);
-    //head = addNode(head, n);
-    //head = delateNode(head, n);
+    head = addNode(head, n);
+    printArrayList(head);
+    head = delateNode(head, n);
     findOrChangeNode(head);
     printArrayList(head);
     return 0;

@@ -22,8 +22,9 @@ int main(){
     struct arrayList *head;
     head = initArrayList(5);
     printArrayList(head);
-    //showOrChangeElement(head, n);
-    //head = insertNode(head, n);//插入到第一个时改变head值
+    showOrChangeElement(head, n);
+    head = insertNode(head, n);//插入到第一个时改变head值
+    printArrayList(head);
     head = delateNode(head, n);
     printArrayList(head);
     return 0;

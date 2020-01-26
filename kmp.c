@@ -5,7 +5,7 @@
 //#define COUNT 100
 void prefixTable(char subString[], int prefix[], int n){// 创建前缀表
     prefix[0] = 0;
-    int i = 0, j = 1;// i 为subString元素下表, j 为prefix元素下标
+    int i = 0, j = 1;// i 为subString元素下标, j 为prefix元素下标
     while (j < n){
         if (subString[i] == subString[j]){
             i++;
